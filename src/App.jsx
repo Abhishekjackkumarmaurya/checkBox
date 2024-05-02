@@ -5,6 +5,7 @@ const App=()=>{
   const [gender,setGender]=useState("male");
   const [city,setCity]=useState("patna");
   const [description,setText]=useState("hello");
+  const [checkedBox,setCheckBox]=useState("true");
 
     
   const submitHandler=(event)=>{
@@ -16,6 +17,11 @@ const App=()=>{
 
 
     console.log(username)
+    console.log(gender)
+    console.log(city)
+    console.log(description)
+    console.log(checkedBox)
+
   }
 
 
@@ -27,8 +33,8 @@ const App=()=>{
        <input onChange={(e)=>{updateUsername(e.target.value)}} name="username" value={username} type="text" placeholder="enter username" />
        <br />
         <br />
-        <input type="radio" onChange={(e)=>{setGender(e.target.value)}} name="gender"  value={male} checked={gender==="male"?true:false} /> Male
-        <input type="radio"  onChange={(e)=>{setGender(e.target.value)}} name="gender"  value={male} checked={gender==="female"?true:false} /> female
+        <input type="radio" onChange={(e)=>{setGender(e.target.value)}} name="gender"  value="male" checked={gender==="male"?true:false} /> Male
+        <input type="radio"  onChange={(e)=>{setGender(e.target.value)}} name="gender"  value="female" checked={gender==="female"?true:false} /> female
         <br />
         <select 
 
@@ -46,11 +52,10 @@ const App=()=>{
         <textarea placeholder="Enter text here" onChange={(e)=>setText(e.target.value)} value={description} ></textarea>
 
         <br />
-        <input type="checkbox" checked={accept?true:false}  />
+        <input type="checkbox" onChange={(e)=>{setCheckBox(e.target.checked)}} value={checkedBox} checked={checkedBox?true:false}  />Select All
      
        <br />
        <button>submit</button>
-       <button>helllo</button>
        
        </form>
     </div>
